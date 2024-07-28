@@ -1,0 +1,3 @@
+pve_api_user: root@pam
+pve_api_password: pass1234
+pve_container_password: pass1234

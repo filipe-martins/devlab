@@ -1,0 +1,22 @@
+pve_api_host: 192.168.1.10
+pve_api_node: bmax
+# The default LXC template.
+pve_lxc_ostemplate: 'local-btrfs:debian-12.4.0-amd64-netinst.iso'
+pve_lxc_cores: 2
+# The Ram size in MB
+pve_lxc_memory: 1024
+# The size of the first disk partition, in GB
+pve_lxc_disk: 4 
+pve_lxc_storage: local-btrfs
+# This should include the SSH public key of the ansible controller
+pve_lxc_public_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHsZCBjk4Xkg+Z615rlHBOObHuvzsLw7c4bEwbVucJQ/ root@ansible
+#
+#  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCs09IUK4LZ4T8d7+CMPQ0vQ0XZPfkYKsz8EJo7gP2SAOAv4zqKtTS1rxeAOiQ6tLzu2fdigRQuBMdqm31FFyWVLkBE4f7DKSwlM8Podn+eFXPHIW0edXMicCHLhvD0W+Al9ypxLYGh9KhI+C2GPW9sEQpyagEaRNMUaGaMf5qF9Wcae7f/iJB+aZU2L9AbKXZj0uAbfGLqBozhcd8EsrY3ZldoqXCfbibeGvkw0rI/jSblnfGDiEOcZQ3Vyp/M27rGNn9B76mEEPD/UWvSEC81EjbC4oAUm6UkDk1LOEwqoJKBkCa05g5g6D+Zd4pJr1qgi8E9tdTwPV3XeVFR1VjVL+DSXn4RdBT/K7jMjNzh9cZLf1JfXXIejBqr2oxPz49eTCornx1axR2//wdb2HD/yibOOlHp4eLMvXeiv3qvhzuFTUuCFXHfiqjSegWWFKuCm05nBqr9qEAH2U55QxcIQJOUwgws7oSVHE+VHmRaAn05+1ed0ZGkc9+BQgZNWn8= al@desktop
+#
+#  ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPL0Zq9t6qNC2bMtsYI/nkZZzxwclrlIgWQ8AfumnqGbDfIQ3mnbRWCBkA8u2J19HAUAG1YUneeVMw/V/6AavhU= root@ansible-debian
+pve_lxc_networks:
+  net0: "name=eth0,bridge=vmbr0,ip=dhcp,firewall=1"
+pve_lxc_unpriviliged: true
+pve_lxc_autostart_onboot: true
+pve_lxc_start: true
+pve_lxc_nameserver: 192.168.1.100

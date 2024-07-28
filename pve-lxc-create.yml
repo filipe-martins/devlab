@@ -1,0 +1,11 @@
+---
+- name: Recreate
+  hosts: localhost
+  vars_files:
+    - vars/pve.yml
+    - vaults/vault.yml
+  roles:
+    - pve_purge
+    - role: pve_lxc_create
+      vars:
+        #pve_lxc_ostemplate: 'local-btrfs:debian-12.4.0-amd64-netinst.iso'
